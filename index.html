@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<style>  
+    .author-list {  
+        margin-top: 4rem;  
+        margin-bottom: 0.5rem;  
+        font-size: 1.4rem;
+    }  
+    .institution-list {  
+        margin-bottom: 1rem;  
+        font-size: 1.2rem;
+    }  
+    .larger-text {  
+        font-size: 1.4rem;  
+    }  
+</style>  
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css"/>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./assets/css/index.bundle.css"/>
+
+    <!-- Title -->
+    <title>DETER</title>
+    <link rel="icon" href="./assets/images/gift.ico" type="image/x-icon">
+
+</head>
+
+
+
+<body>
+
+
+<!-- navbar -->
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-sticky navbar-dark">
+    <!-- <div class="container">
+        <a href="index.html" class="navbar-brand">
+            <img src="./assets/images/logo/otter_logo.png" alt="Logo"></a>
+    </div> -->
+    </div>
+</nav>
+
+
+<div class="offcanvas-wrap">
+
+    <!-- header -->
+    <section class="bg-primary inverted pt-20">
+        <div class="container foreground mt-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 text-center">
+                    <h1 class="display-1 fw-bold">
+                        DETER: Detecting Edited Regions for Deterring Generative Manipulations
+                    </h1>
+                    <div class="row justify-content-center g-1">
+                        <div class="col-auto">
+                            <a href="http://arxiv.org/pdf/" class="btn btn-white rounded-pill">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                                Paper
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <!-- <a href="https://github.com" class="btn btn-outline-white rounded-pill"> -->
+                            <a class="btn btn-outline-white rounded-pill">
+                                <i class="bi bi-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a  class="btn btn-outline-white rounded-pill">
+                                <i class="bi bi-display"></i>
+                                Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="author-list" align="center">
+                <a target='_blank'>Sai Wang<sup>*1</sup></a>&emsp;
+                <a target='_blank'>Ye Zhu<sup>*2</sup></a>&emsp;
+                <a target='_blank'>Ruoyu Wang<sup>1</sup></a>&emsp;
+                <a target='_blank'>Amaya Dharmasiri<sup>2</sup></a>&emsp;
+                <a target='_blank'>Olga Russakovsky<sup>2</sup></a>&emsp;
+                <a target='_blank'>Yu Wu<sup>1</sup></a>
+            </div>
+            <div class="institution-list" align="center">
+                <sup>1</sup> School of Computer Science, Wuhan University
+                </br>
+                <sup>2</sup> Department of Computer Science, Princeton University
+                </br>
+                <sup>*</sup> for equal contributions
+
+            </div>
+            <!-- <div class="row mt-10"> -->
+                <!-- <div class="bottom-overlap" data-aos="fade-up" data-aos-delay="100">
+                    <figure class="media media-video equal equal-16-9" data-bp='{"ytSrc": ""}'> -->
+              <!-- <span style="background-image: url('./assets/images/deter_video_preview.png')"> -->
+              <!-- </span>
+                    </figure>
+                </div> -->
+            <!-- </div> -->
+            
+            <div class="row mt-10">
+                <div class="bottom-overlap" data-aos="fade-up" data-aos-delay="100">
+                    <!-- <figure class="media media-video equal equal-16-9"> -->
+                        <video controls autoplay preload="metadata" width="100%" height="100%">
+                            <source src="video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <!-- </figure> -->
+                </div>
+            </div>
+        </div>
+        <figure class="background" data-aos="fade-up" data-aos-delay="200">
+            <img class="position-absolute top-100 start-50 translate-middle"
+                 src="./assets/images/svg/pattern-lg-light.svg"
+                 alt="Image">
+        </figure>
+    </section>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Player Example</title>
+        <style>
+            #playButton {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #ccc;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+    
+
+    
+
+    <!-- features -->
+    <section class="py-15 py-xl-20">
+        <div class="container mt-15">
+            <div class="container">
+                <div class="row justify-content-center mb-6">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="fw-bold">
+                            Abstract
+                        </h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">  
+                    <p class="larger-text">  With the recent booming of Generative AI, concerns regarding the potential malicious usage of deep generative models and their generated fake data have reached their zenith. 
+Existing deep fake datasets are mainly designed for detecting classic editing operations like GANs-based face swapping, presenting two major defects when deploying the detection system trained on them in real-life scenarios.
+On the one hand, prior construction techniques lag behind the current revolutionary advances in generative modeling that move towards versatile and fine-grained manipulations such as arbitrary image region inpainting via Diffusion Models. 
+On the other hand, we note that they tend to introduce spurious correlations in the benchmark evaluation suites that result in a high false alarm rate with current detection methods.
+To this end, we introduce the <strong>DETER</strong>, featuring an up-to-date, high-quality, and large-scale image dataset for <strong>DETE</strong>cting edited image <strong>R</strong>egions and <strong>deter</strong>ring more generic generative manipulations.
+<strong>DETER</strong> includes 300,000 images manipulated by four state-of-the-art generators and integrates three editing operations in diverse granularities (i.e., face swapping, inpainting, and attribute editing) in realistic visual scenarios. 
+Notably, we conduct extensive experiments and break-down analysis using our rich annotations and improved benchmark protocols, revealing the future direction and challenge for supporting reliable regional fake detection models.
+                    </p>  
+                </div>                  
+            </div>
+        </div>
+
+        <!-- ############################################################################################################## -->
+        <div class="container mt-15">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 text-center aos-init aos-animate" data-aos="fade-up">
+                    <i class="bi bi-images fs-1 text-primary"></i>
+                    <h4 class="fs-5 mt-4">
+                        300K Images
+                    </h4>
+                    <p class="text-secondary mx-2">
+                        180K Training Images<br>30K Validation Images<br>90K Testing Images
+                    </p>
+                    <!-- <a href="" class="underline">Learn More</a> -->
+                </div>
+                <div class="col-md-6 col-lg-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-pencil-square fs-1 text-primary"></i>
+                    <h4 class="fs-5 mt-4">
+                        Diverse Operations
+                    </h4>
+                    <p class="text-secondary mx-2">
+                        Face Swapping<br>Attribute Editing<br>Face Inapinting<br>
+                    </p>
+                    <!-- <a href="" class="underline">Learn More</a> -->
+                </div>
+                
+                <div class="col-md-6 col-lg-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    
+                    <i class="bi bi-box fs-1 text-primary"></i>
+                    <h4 class="fs-5 mt-4">
+                        SOTA Model
+                    </h4>
+                    <p class="text-secondary mx-2">
+                        GAN Models<br>Diffusion Models<br>
+                    </p>
+                    <!-- <a href="" class="underline">Learn More</a> -->
+                </div>
+                <div class="col-md-6 col-lg-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-people-fill fs-1 text-primary"></i>
+                    <h4 class="fs-5 mt-4">
+                        Human Study with IRB
+                    </h4>
+                    <p class="text-secondary mx-2">
+                        The quality of our dataset is guaranteed by extensive Institutional Review Board (IRB) approved human studies
+                    </p>
+                    <!-- <a href="" class="underline">Learn More</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Hover Effect</title>
+        <style>
+            #image-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+                max-width: 1500px;
+                margin: 0 auto;
+            }
+    
+            .image-item {
+                box-sizing: border-box;
+                width: 50%;
+                margin-bottom: 5px;
+                overflow: hidden;
+                position: relative;
+                display: flex;
+                flex-direction: column; 
+            }
+    
+            .image-item img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease-in-out;
+                flex: 1;  
+            }
+    
+            .image-item:hover img {
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div id="image-container">
+        <div class="image-item">
+            <img src="image_1.jpg" alt="Image 1">
+        </div>
+        <div class="image-item">
+            <img src="image_2.jpg" alt="Image 2">
+        </div><br>
+        <div class="image-item">
+            <img src="image_3.jpg" alt="Image 3">
+        </div>
+        <div class="image-item">
+            <img src="image_4.jpg" alt="Image 4">
+        </div>
+
+    </div>
+    
+    <script>
+        const imageItems = document.querySelectorAll(".image-item");
+    
+        imageItems.forEach(item => {
+            
+            item.addEventListener("mouseenter", function () {
+                // Reset the scale for all images
+                imageItems.forEach(item => {
+                    item.querySelector("img").style.transform = "scale(1)";
+                });
+    
+                // Get the current image source
+                const currentSrc = this.querySelector("img").src;
+     
+                const newSrc = currentSrc.replace(/\.jpg$/, '_gt.jpg');
+                this.querySelector("img").style.transform = "scale(1.2)";
+
+                this.querySelector("img").src = newSrc;
+            });
+    
+            item.addEventListener("mouseleave", function () {
+                // Reset the scale on mouse leave
+                this.querySelector("img").style.transform = "scale(1)";
+                const originalSrc = this.querySelector("img").src.replace(/_gt\.jpg$/, '.jpg');
+                this.querySelector("img").src = originalSrc;
+            });
+        });
+    </script>
+
+<!-- javascript -->
+<script src="./assets/js/vendor.bundle.js"></script>
+<script src="./assets/js/index.bundle.js"></script>
+</body>
+
+</html>
